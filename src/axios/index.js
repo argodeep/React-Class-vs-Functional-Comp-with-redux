@@ -11,7 +11,6 @@ export function getUserProfilesFunctional() {
         dispatch(getProfilesFunctional(response.data.results));
       })
       .catch((err) => {
-        console.log(err);
         dispatch(getProfilesFunctional([]));
       });
   };
@@ -25,7 +24,6 @@ export function getUserProfilesClass() {
         dispatch(getProfilesClass(response.data.results));
       })
       .catch((err) => {
-        console.log(err);
         dispatch(getProfilesClass([]));
       });
   };

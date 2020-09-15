@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as API from "../../axios";
+import HOCWrapper from "../hoc";
+import HOCList from "../hoc/list";
+
+const List = HOCWrapper(HOCList, 'Class-based Component');
 
 class ClassBasedComponent extends Component {
   constructor(props) {
@@ -17,22 +21,7 @@ class ClassBasedComponent extends Component {
   }
 
   render() {
-    return (
-      <div className="center">
-        <p style={{ textAlign: "center" }}>
-          {this.props.profiles.length} profiles found
-        </p>
-        {this.props.profiles.map((profile, index) => (
-          <div key={index} style={{ marginBottom: 8 }}>
-            <span>#{index + 1}</span>
-            <span style={{ minWidth: 200 }}>
-              {profile.name.title} {profile.name.first} {profile.name.last}
-            </span>
-            <span>{profile.phone}</span>
-          </div>
-        ))}
-      </div>
-    );
+    return <List data={this.props.profiles} />;
   }
 }
 

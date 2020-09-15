@@ -6,9 +6,7 @@ import ClassBasedComponent from "./components/basic/class";
 export default function App() {
   return (
     <>
-      <h5>Functional Component</h5>
       <FunctionalComponent />
-      <h5>ClassBased Component</h5>
       <ClassBasedComponent />
     </>
   );
